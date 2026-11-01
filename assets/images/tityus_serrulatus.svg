@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Tityus serrulatus - Escorpião-amarelo (Pernas amarelas, serrilha dorsal no 4º segmento) -->
+  <defs>
+    <radialGradient id="escorpTronco" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4A3419"/>
+      <stop offset="80%" stop-color="#2D1F0E"/>
+      <stop offset="100%" stop-color="#140C04"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Pernas locomotoras amarelas claras translúcidas (4 pares) -->
+  <g stroke="#EAB308" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M85 85 L55 65 L40 75 L30 90"/>
+    <path d="M115 85 L145 65 L160 75 L170 90"/>
+    <path d="M85 98 L50 92 L35 105 L22 120"/>
+    <path d="M115 98 L150 92 L165 105 L178 120"/>
+    <path d="M85 110 L52 118 L40 135 L28 152"/>
+    <path d="M115 110 L148 118 L160 135 L172 152"/>
+    <path d="M85 122 L58 140 L48 160 L38 180"/>
+    <path d="M115 122 L142 140 L152 160 L162 180"/>
+  </g>
+
+  <!-- Pedipalpos (Braços e pinças delgadas amarelas) -->
+  <g stroke="#CA8A04" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M90 70 L65 45 L50 30"/>
+    <path d="M110 70 L135 45 L150 30"/>
+  </g>
+  <!-- Pinças delgadas típicas de Buthidae -->
+  <g fill="#EAB308" stroke="#A16207" stroke-width="1.5">
+    <!-- Pinça esquerda -->
+    <path d="M50 30 C45 22, 35 24, 38 15 C42 8, 52 16, 52 24 Z"/>
+    <path d="M50 30 C56 22, 60 10, 50 8 C46 16, 44 24, 50 30 Z"/>
+    <!-- Pinça direita -->
+    <path d="M150 30 C155 22, 165 24, 162 15 C158 8, 148 16, 148 24 Z"/>
+    <path d="M150 30 C144 22, 140 10, 150 8 C154 16, 156 24, 150 30 Z"/>
+  </g>
+
+  <!-- Tronco (Prosoma e Mesossoma) castanho-escuro -->
+  <path d="M100 68 C82 68, 80 82, 80 125 C80 135, 90 140, 100 140 C110 140, 120 135, 120 125 C120 82, 118 68, 100 68 Z"
+        fill="url(#escorpTronco)" stroke="#1A1105" stroke-width="2"/>
+
+  <!-- Segmentos do corpo -->
+  <g stroke="#1A1105" stroke-width="1.5" opacity="0.6">
+    <line x1="82" y1="80" x2="118" y2="80"/>
+    <line x1="81" y1="92" x2="119" y2="92"/>
+    <line x1="80" y1="104" x2="120" y2="104"/>
+    <line x1="80" y1="116" x2="120" y2="116"/>
+    <line x1="82" y1="128" x2="118" y2="128"/>
+  </g>
+
+  <!-- Cauda (Metassoma) amarela curvada para o lado com aguilhão -->
+  <g fill="#FACC15" stroke="#A16207" stroke-width="1.8">
+    <polygon points="94,140 106,140 108,154 92,154"/>
+    <polygon points="92,154 108,154 112,170 88,170"/>
+    <polygon points="88,170 112,170 118,185 86,185"/>
+    
+    <!-- 4º e 5º SEGMENTOS COM SERRILHA DORSAL (Marca diagnóstica exclusiva do Tityus serrulatus) -->
+    <g>
+      <polygon points="86,185 118,185 128,178 114,166" fill="#CA8A04"/>
+      <!-- Serrilha: dentes cônicos pontiagudos -->
+      <polygon points="120,183 125,185 122,180" fill="#78350F"/>
+      <polygon points="123,178 128,180 125,175" fill="#78350F"/>
+      <polygon points="125,173 130,175 127,170" fill="#78350F"/>
+    </g>
+
+    <!-- Télson (Vesícula de veneno e aguilhão) -->
+    <path d="M118 162 C126 150, 140 152, 142 165 C142 175, 128 178, 118 162 Z" fill="#EAB308"/>
+    <!-- Aguilhão curvo escuro com dente subaculear pequeno -->
+    <path d="M142 162 C152 164, 155 174, 152 180" stroke="#78350F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

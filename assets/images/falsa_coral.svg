@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Falsa-coral inofensiva (Oxyrhopus / Erythrolamprus) - Anéis que não fecham no ventre, olhos normais -->
+  <defs>
+    <!-- Ventre claro contínuo visível nas curvas -->
+    <filter id="falsaDrop" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Corpo em S suave -->
+  <path d="M50 40 C110 35, 160 65, 145 105 C130 145, 55 125, 65 165 C70 185, 110 185, 160 170"
+        fill="none" stroke="#EF4444" stroke-width="22" stroke-linecap="round" filter="url(#falsaDrop)"/>
+
+  <!-- Anéis pretos e amarelos dorsais -->
+  <g stroke-linecap="butt">
+    <path d="M75 39 L78 39" stroke="#000000" stroke-width="22"/>
+    <path d="M82 40 L86 41" stroke="#FDE047" stroke-width="22"/>
+    <path d="M90 42 L94 44" stroke="#000000" stroke-width="22"/>
+
+    <path d="M120 49 L124 52" stroke="#000000" stroke-width="22"/>
+    <path d="M128 56 L132 59" stroke="#FDE047" stroke-width="22"/>
+    <path d="M136 63 L140 67" stroke="#000000" stroke-width="22"/>
+
+    <path d="M148 95 L147 100" stroke="#000000" stroke-width="22"/>
+    <path d="M145 105 L143 110" stroke="#FDE047" stroke-width="22"/>
+    <path d="M140 115 L138 120" stroke="#000000" stroke-width="22"/>
+  </g>
+
+  <!-- Ventre claro / esbranquiçado visível na dobra (anéis dorsais NÃO dão a volta completa no ventre) -->
+  <path d="M60 145 C65 160, 75 168, 85 174" fill="none" stroke="#FEF9C3" stroke-width="6" stroke-linecap="round"/>
+  <path d="M120 120 C110 125, 95 125, 85 130" fill="none" stroke="#FEF9C3" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Cabeça de Falsa-coral com olhos maiores e focinho mais afilado -->
+  <g transform="translate(36, 32)">
+    <path d="M18 10 C18 4, 2 4, 2 10 C2 16, 18 16, 18 10 Z" fill="#EF4444" stroke="#B91C1C" stroke-width="1.5"/>
+    <path d="M0 10 L8 5 L8 15 Z" fill="#FEF9C3"/>
+    <!-- Olho bem proporcional e evidente com pupila escura -->
+    <circle cx="8" cy="7" r="2.8" fill="#FBBF24" stroke="#000000" stroke-width="0.8"/>
+    <circle cx="8" cy="7" r="1.4" fill="#000000"/>
+  </g>
+</svg>

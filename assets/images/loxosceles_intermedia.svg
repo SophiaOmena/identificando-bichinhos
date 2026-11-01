@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Loxosceles intermedia - Aranha-marrom (Desenho de violino no cefalotórax, 6 olhos em 3 pares) -->
+  <defs>
+    <radialGradient id="loxoscelesBody" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A88258"/>
+      <stop offset="70%" stop-color="#785934"/>
+      <stop offset="100%" stop-color="#4E361B"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Pernas longas e muito finas (aspecto delicado) -->
+  <g stroke="#785934" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M85 85 L45 55 L20 40 L5 25"/>
+    <path d="M115 85 L155 55 L180 40 L195 25"/>
+    <path d="M82 95 L30 85 L10 90 L2 110"/>
+    <path d="M118 95 L170 85 L190 90 L198 110"/>
+    <path d="M84 105 L35 125 L18 150 L10 178"/>
+    <path d="M116 105 L165 125 L182 150 L190 178"/>
+    <path d="M88 115 L50 155 L32 180 L25 198"/>
+    <path d="M112 115 L150 155 L168 180 L175 198"/>
+  </g>
+
+  <!-- Cefalotórax circular achatado -->
+  <ellipse cx="100" cy="98" rx="18" ry="18" fill="url(#loxoscelesBody)" stroke="#382410" stroke-width="1.5"/>
+
+  <!-- DESENHO DO VIOLINO NO CEFALOTÓRAX (Marca de Loxosceles) -->
+  <!-- Corpo do violino apontado para frente e braço do violino apontando para trás -->
+  <g fill="#2D1908" stroke="#1F1004" stroke-width="0.8">
+    <!-- Braço do violino (sulco dorsal) -->
+    <rect x="98.5" y="96" width="3" height="14" rx="1.5"/>
+    <!-- Caixa do violino -->
+    <path d="M94 88 C90 85, 92 80, 96 82 C98 84, 100 84, 102 82 C106 80, 108 85, 104 88 C102 90, 102 94, 104 96 C100 98, 98 98, 94 96 C96 94, 96 90, 94 88 Z"/>
+  </g>
+
+  <!-- Abdômen oval liso marrom homogêneo (sem espinhos ou pelos grossos) -->
+  <ellipse cx="100" cy="138" rx="16" ry="22" fill="url(#loxoscelesBody)" stroke="#382410" stroke-width="1.5"/>
+
+  <!-- 6 OLHOS DISPOSTOS EM 3 PARES (Díades em semicírculo) - Diagnóstico exclusivo de Loxosceles -->
+  <g fill="#000000">
+    <!-- Par lateral esquerdo -->
+    <circle cx="91" cy="80" r="1.3"/>
+    <circle cx="93" cy="81" r="1.3"/>
+    <!-- Par médio central -->
+    <circle cx="99" cy="78" r="1.3"/>
+    <circle cx="101" cy="78" r="1.3"/>
+    <!-- Par lateral direito -->
+    <circle cx="107" cy="81" r="1.3"/>
+    <circle cx="109" cy="80" r="1.3"/>
+  </g>
+</svg>

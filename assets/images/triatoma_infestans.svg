@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Triatoma infestans - Barbeiro Bicudo (Doença de Chagas) -->
+  <defs>
+    <radialGradient id="triatomaBody" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4A3B32"/>
+      <stop offset="70%" stop-color="#2D221B"/>
+      <stop offset="100%" stop-color="#140E0A"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Pernas articuladas finas e compridas (3 pares de inseto) -->
+  <g stroke="#261A13" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M85 70 L45 45 L25 55"/>
+    <path d="M115 70 L155 45 L175 55"/>
+    <path d="M82 95 L35 90 L15 110"/>
+    <path d="M118 95 L165 90 L185 110"/>
+    <path d="M85 125 L40 145 L25 175"/>
+    <path d="M115 125 L160 145 L175 175"/>
+  </g>
+
+  <!-- Antenas finas de 4 artículos -->
+  <path d="M92 35 L70 15 L60 8" stroke="#1A110B" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M108 35 L130 15 L140 8" stroke="#1A110B" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Conexivo (Borda do abdômen) com faixas alternadas amarelas e pretas - marca diagnóstica -->
+  <path d="M100 70 C60 70, 52 105, 52 145 C52 178, 75 190, 100 190 C125 190, 148 178, 148 145 C148 105, 140 70, 100 70 Z"
+        fill="#FACC15" stroke="#140E0A" stroke-width="3"/>
+
+  <!-- Faixas pretas do conexivo -->
+  <g fill="#1F1610">
+    <path d="M54 90 L66 92 L64 105 L53 103 Z"/>
+    <path d="M146 90 L134 92 L136 105 L147 103 Z"/>
+    <path d="M52 118 L64 119 L63 132 L52 130 Z"/>
+    <path d="M148 118 L136 119 L137 132 L148 130 Z"/>
+    <path d="M55 145 L67 144 L69 157 L58 158 Z"/>
+    <path d="M145 145 L133 144 L131 157 L142 158 Z"/>
+    <path d="M68 170 L80 166 L84 177 L73 181 Z"/>
+    <path d="M132 170 L120 166 L116 177 L127 181 Z"/>
+  </g>
+
+  <!-- Élitros / Asas hemélitros cruzadas sobre o dorso -->
+  <path d="M100 70 C72 70, 68 100, 68 140 C68 175, 88 186, 100 188 C112 186, 132 175, 132 140 C132 100, 128 70, 100 70 Z"
+        fill="url(#triatomaBody)"/>
+  <path d="M100 70 L100 188" stroke="#1A110B" stroke-width="1.8"/>
+
+  <!-- Pronoto (Tórax) trapezoidal com tubérculos -->
+  <polygon points="82,48 118,48 128,72 72,72" fill="#2E2017" stroke="#140E0A" stroke-width="2"/>
+  <polygon points="88,48 112,48 118,65 82,65" fill="#3D2B1F"/>
+
+  <!-- Cabeça alongada cônica (Bicuda) com rostro reto -->
+  <path d="M93 48 L93 25 L100 18 L107 25 L107 48 Z" fill="#1C130D"/>
+  
+  <!-- Olhos negros salientes nas laterais da cabeça -->
+  <circle cx="91" cy="36" r="3.5" fill="#000000" stroke="#FBBF24" stroke-width="1"/>
+  <circle cx="109" cy="36" r="3.5" fill="#000000" stroke="#FBBF24" stroke-width="1"/>
+
+  <!-- Rostro (Bico reto curto de 3 segmentos que dobra sob o corpo) -->
+  <line x1="100" y1="18" x2="100" y2="40" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

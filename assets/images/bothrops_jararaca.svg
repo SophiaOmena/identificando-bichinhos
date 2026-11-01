@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Bothrops jararaca - Jararaca (Fosseta loreal, desenhos em V invertido, cauda lisa) -->
+  <defs>
+    <radialGradient id="jararacaSkin" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8C7355"/>
+      <stop offset="70%" stop-color="#5E472D"/>
+      <stop offset="100%" stop-color="#382613"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Corpo serpenteante em S -->
+  <path d="M70 45 C120 40, 160 70, 140 105 C120 140, 40 120, 50 160 C60 190, 120 185, 170 170"
+        fill="none" stroke="url(#jararacaSkin)" stroke-width="24" stroke-linecap="round"/>
+
+  <!-- Padrão dorsal de manchas em "V" invertido / trapézios escuros com borda clara (marca de Bothrops) -->
+  <g fill="#24170A" stroke="#E5D5C5" stroke-width="1.2">
+    <!-- Mancha 1 -->
+    <polygon points="120,55 135,45 142,65 128,70"/>
+    <!-- Mancha 2 -->
+    <polygon points="145,85 155,100 135,112 128,95"/>
+    <!-- Mancha 3 -->
+    <polygon points="95,120 110,126 102,142 88,135"/>
+    <!-- Mancha 4 -->
+    <polygon points="50,150 62,142 70,160 58,168"/>
+    <!-- Mancha 5 -->
+    <polygon points="85,178 100,172 108,186 92,190"/>
+    <!-- Mancha 6 -->
+    <polygon points="130,178 145,170 150,182 136,188"/>
+  </g>
+
+  <!-- Ponta da cauda lisa e fina (sem guizo) -->
+  <path d="M170 170 C185 165, 195 160, 198 152" fill="none" stroke="#382613" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Cabeça triangular achatada e bem destacada do corpo -->
+  <g transform="translate(48, 22) rotate(-25)">
+    <path d="M0 20 L25 5 L35 20 L25 35 Z" fill="#42301C" stroke="#24170A" stroke-width="2"/>
+    
+    <!-- Faixa pós-ocular escura típica da Jararaca -->
+    <line x1="8" y1="12" x2="32" y2="10" stroke="#1A0F05" stroke-width="3"/>
+    
+    <!-- Olho com pupila elíptica vertical (olho de gato) -->
+    <circle cx="15" cy="14" r="3.5" fill="#FBBF24"/>
+    <ellipse cx="15" cy="14" rx="0.9" ry="2.8" fill="#000000"/>
+
+    <!-- FOSSETA LOREAL (Orifício termorreceptor entre o olho e a narina - MARCA DE PEÇONHA) -->
+    <circle cx="23" cy="16" r="2.2" fill="#B91C1C" stroke="#000000" stroke-width="0.8"/>
+
+    <!-- Narina na ponta do focinho -->
+    <circle cx="30" cy="18" r="1.2" fill="#000000"/>
+  </g>
+
+  <!-- Língua bífida protraída -->
+  <path d="M30 18 L16 10 L8 8 M16 10 L8 14" stroke="#DC2626" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+</svg>

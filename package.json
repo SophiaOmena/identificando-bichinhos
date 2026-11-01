@@ -1,0 +1,22 @@
+{
+  "name": "identificando-bichinhos",
+  "version": "1.0.0",
+  "description": "Identificador por foto e guia de reconhecimento de animais peçonhentos e vetores (Barbeiros, Cobras, Escorpiões e Aranhas)",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "node --test tests/**/*.test.js"
+  },
+  "keywords": [
+    "identificacao",
+    "animais-peconhentos",
+    "barbeiros",
+    "cobras",
+    "escorpioes",
+    "aranhas",
+    "saude-publica",
+    "biologia",
+    "antivenom"
+  ],
+  "author": "Sophia Omena <annasophiadeomena@gmail.com>",
+  "license": "MIT"
+}

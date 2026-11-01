@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Percevejo Fitófago Inofensivo (Pé-de-folha com bico muito longo) -->
+  <defs>
+    <radialGradient id="percevejoGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5B6834"/>
+      <stop offset="70%" stop-color="#3D4721"/>
+      <stop offset="100%" stop-color="#232B10"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Pernas dianteiras e medianas normais -->
+  <g stroke="#3D4721" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M85 70 L45 45 L25 55"/>
+    <path d="M115 70 L155 45 L175 55"/>
+    <path d="M82 95 L35 90 L18 110"/>
+    <path d="M118 95 L165 90 L182 110"/>
+  </g>
+
+  <!-- Perna traseira com expansão foliácea típica (PÉ-DE-FOLHA) -->
+  <g fill="#4E5C2A" stroke="#232B10" stroke-width="2">
+    <!-- Perna esquerda -->
+    <path d="M85 125 L50 145 C35 150, 20 160, 25 175 C30 185, 45 180, 55 168 L60 190" fill="none" stroke-width="3"/>
+    <path d="M30 152 C20 160, 22 176, 34 178 C44 180, 52 170, 50 158 Z"/>
+    
+    <!-- Perna direita -->
+    <path d="M115 125 L150 145 C165 150, 180 160, 175 175 C170 185, 155 180, 145 168 L140 190" fill="none" stroke-width="3"/>
+    <path d="M170 152 C180 160, 178 176, 166 178 C156 180, 148 170, 150 158 Z"/>
+  </g>
+
+  <!-- Antenas longas com pontas alaranjadas -->
+  <path d="M92 40 L65 15 L50 6" stroke="#232B10" stroke-width="2" fill="none"/>
+  <circle cx="50" cy="6" r="2.5" fill="#F97316"/>
+  <path d="M108 40 L135 15 L150 6" stroke="#232B10" stroke-width="2" fill="none"/>
+  <circle cx="150" cy="6" r="2.5" fill="#F97316"/>
+
+  <!-- Corpo / Élitros verde-oliva com faixa amarela fina -->
+  <path d="M100 68 C70 68, 62 100, 62 140 C62 176, 82 188, 100 190 C118 188, 138 176, 138 140 C138 100, 130 68, 100 68 Z"
+        fill="url(#percevejoGrad)" stroke="#1C240A" stroke-width="2.5"/>
+  <line x1="70" y1="110" x2="130" y2="110" stroke="#FDE047" stroke-width="2"/>
+
+  <!-- Tórax com espinhos laterais -->
+  <polygon points="80,50 120,50 138,68 62,68" fill="#3D4721" stroke="#1C240A" stroke-width="2"/>
+
+  <!-- Cabeça com bico MUITO LONGO (ultrapassa as pernas anteriores e vai até o meio do abdômen) -->
+  <polygon points="94,50 106,50 103,28 97,28" fill="#2C3514"/>
+  <circle cx="92" cy="38" r="3" fill="#A3E635"/>
+  <circle cx="108" cy="38" r="3" fill="#A3E635"/>
+
+  <!-- Rostro (Bico verde-amarelo comprido inofensivo) -->
+  <line x1="100" y1="28" x2="100" y2="120" stroke="#84CC16" stroke-width="2.5" stroke-dasharray="3,2"/>
+</svg>

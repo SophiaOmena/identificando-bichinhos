@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Crotalus durissus - Cascavel (Guizo na cauda, losangos dorsais, fosseta loreal) -->
+  <defs>
+    <radialGradient id="crotalusSkin" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A38458"/>
+      <stop offset="70%" stop-color="#73552C"/>
+      <stop offset="100%" stop-color="#422D13"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Corpo em espiral defensiva -->
+  <path d="M75 55 C125 50, 160 80, 140 115 C120 150, 45 130, 55 170 C65 195, 115 190, 155 165"
+        fill="none" stroke="url(#crotalusSkin)" stroke-width="26" stroke-linecap="round"/>
+
+  <!-- Padrão dorsal de LOSANGOS escuros com bordas claras característicos da Cascavel -->
+  <g fill="#2D1C08" stroke="#FEF3C7" stroke-width="1.5">
+    <polygon points="125,50 135,62 125,74 115,62"/>
+    <polygon points="148,88 158,100 146,112 136,100"/>
+    <polygon points="98,125 108,137 96,149 86,137"/>
+    <polygon points="56,155 68,165 58,178 46,168"/>
+    <polygon points="92,185 104,175 114,188 102,196"/>
+  </g>
+
+  <!-- GUIZO / CHOCALHO NA CAUDA (Característica exclusiva de Crotalus) -->
+  <g transform="translate(155, 165) rotate(20)">
+    <!-- Anéis córneos imbricados do guizo -->
+    <ellipse cx="6" cy="0" rx="4" ry="7" fill="#D97706" stroke="#78350F" stroke-width="1.2"/>
+    <ellipse cx="12" cy="0" rx="4" ry="7.5" fill="#FBBF24" stroke="#78350F" stroke-width="1.2"/>
+    <ellipse cx="18" cy="0" rx="4" ry="8" fill="#FDE68A" stroke="#78350F" stroke-width="1.2"/>
+    <ellipse cx="24" cy="0" rx="4" ry="7" fill="#FBBF24" stroke="#78350F" stroke-width="1.2"/>
+    <ellipse cx="30" cy="0" rx="3.5" ry="5.5" fill="#D97706" stroke="#78350F" stroke-width="1.2"/>
+    <!-- Linhas de vibração acústica -->
+    <path d="M36 -6 Q40 0 36 6 M40 -8 Q45 0 40 8" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Cabeça triangular robusta -->
+  <g transform="translate(52, 30) rotate(-20)">
+    <path d="M0 20 L26 4 L38 20 L26 36 Z" fill="#4D361A" stroke="#24170A" stroke-width="2"/>
+    
+    <!-- Faixas paravertebrais escuras -->
+    <line x1="5" y1="10" x2="30" y2="8" stroke="#1F1306" stroke-width="2.5"/>
+
+    <!-- Olho com pupila vertical -->
+    <circle cx="16" cy="13" r="3.5" fill="#F59E0B"/>
+    <ellipse cx="16" cy="13" rx="0.8" ry="2.8" fill="#000000"/>
+
+    <!-- FOSSETA LOREAL (Orifício termossensível) -->
+    <circle cx="25" cy="15" r="2.2" fill="#B91C1C" stroke="#000000" stroke-width="0.8"/>
+  </g>
+</svg>

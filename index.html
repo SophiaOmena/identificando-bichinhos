@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Identificando Bichinhos - Barbeiros, Cobras, Escorpiões e Aranhas</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        
+        <!-- HEADER -->
+        <header class="app-header">
+            <div class="header-brand">
+                <div class="header-logo">
+                    <img src="assets/images/app_logo.svg" alt="Logo" style="width:100%; height:100%;">
+                </div>
+                <div>
+                    <h1 class="header-title">Identificando Bichinhos</h1>
+                </div>
+            </div>
+            <button class="btn-sos" id="btnHeaderSos">
+                <span>🚨</span>
+                <span>SOS Peçonha</span>
+            </button>
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL (TABS) -->
+        <main class="app-main">
+
+            <!-- ========================================================
+                 TAB 1: SCANNER POR FOTO
+                 ======================================================== -->
+            <section id="paneScanner" class="tab-pane active">
+                
+                <!-- Viewport do Scanner -->
+                <div class="scanner-card">
+                    <span class="scanner-hint-badge">Fotografe ou escolha uma amostra</span>
+                    
+                    <img id="scannerImgPreview" class="scanner-img-preview" src="assets/images/bothrops_jararaca.svg" alt="Preview da Imagem">
+                    <canvas id="scannerCanvas" style="display:none;"></canvas>
+
+                    <!-- Retículo de Mira e Linha de Laser -->
+                    <div class="scanner-reticle">
+                        <div class="reticle-corner tl"></div>
+                        <div class="reticle-corner tr"></div>
+                        <div class="reticle-corner bl"></div>
+                        <div class="reticle-corner br"></div>
+                        <div class="laser-scan-line"></div>
+                    </div>
+
+                    <!-- Controles do Scanner -->
+                    <div class="scanner-buttons-row">
+                        <!-- Botão de Upload -->
+                        <label for="filePhotoInput" class="btn-scanner-upload" title="Carregar foto da galeria">
+                            📁
+                        </label>
+                        <input type="file" id="filePhotoInput" accept="image/*" style="display:none;">
+
+                        <!-- Botão de Disparo / Diagnóstico -->
+                        <button id="btnShutterAction" class="btn-scanner-shutter" title="Identificar por Foto">
+                            <div class="shutter-inner-dot"></div>
+                        </button>
+
+                        <!-- Botão de Alternar Câmera / Amostras -->
+                        <button id="btnNextSample" class="btn-scanner-camera" title="Próxima amostra de teste">
+                            🔬
+                        </button>
+                    </div>
+                </div>
+
+                <!-- BANCO DE IMAGENS E AMOSTRAS CIENTÍFICAS (1 CLIQUE PARA TESTAR) -->
+                <div class="sample-datasets-box">
+                    <div class="sample-datasets-title">
+                        <span>Bancos de Imagens de Teste</span>
+                        <span style="font-size:11px; color:#0284C7;">Toque para carregar</span>
+                    </div>
+                    <div class="sample-pills-row" id="samplePillsRow">
+                        <!-- Pílulas de espécimes geradas dinamicamente via JS -->
+                    </div>
+                </div>
+
+                <!-- CARD DE RESULTADO DO DIAGNÓSTICO -->
+                <div id="resultCard" class="result-card">
+                    <div class="result-header">
+                        <div>
+                            <span id="resultCategoryBadge" style="font-size:11px; font-weight:700; color:#0369A1; text-transform:uppercase;">Cobras e Serpentes</span>
+                            <h2 class="result-species-title" id="resultSpeciesName">Bothrops jararaca</h2>
+                            <p class="result-common-title" id="resultCommonName">Jararaca (Jararaca-comum)</p>
+                        </div>
+                        <span id="resultDangerBadge" class="danger-tag danger">PERIGO IMEDIATO</span>
+                    </div>
+
+                    <!-- Barra de Confiança -->
+                    <div class="confidence-bar-container">
+                        <div class="confidence-bar-label">
+                            <span>Convergência Morfológica:</span>
+                            <span id="resultConfidenceText">96%</span>
+                        </div>
+                        <div class="confidence-bar-bg">
+                            <div class="confidence-bar-fill" id="resultConfidenceFill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Caixa de Alerta -->
+                    <div id="resultAlertBox" class="result-alert-box danger">
+                        <strong>⚠️ Gravidade:</strong> <span id="resultUrgencyText">Acidente Botrópico com peçonha proteolítica.</span>
+                    </div>
+
+                    <!-- Soro Recomendado -->
+                    <div style="background:#F1F5F9; border-radius:8px; padding:10px; margin-bottom:12px; font-size:12px;">
+                        <strong>💉 Soro Antipeçonhento Indicado:</strong>
+                        <div id="resultSerumText" style="color:#0369A1; font-weight:700; margin-top:2px;">Soro Antibotrópico (SAB)</div>
+                    </div>
+
+                    <!-- Diagnóstico Comparativo -->
+                    <div style="background:#FFFBEB; border-left:3px solid #D97706; border-radius:6px; padding:10px; font-size:12px; margin-bottom:14px;">
+                        <strong>🔍 Como diferenciar de similares:</strong>
+                        <p id="resultLookalikeTip" style="color:#78350F; margin-top:3px;">Fosseta loreal presente entre a narina e o olho.</p>
+                    </div>
+
+                    <!-- Botão de Ação Rápida -->
+                    <div style="display:flex; gap:8px;">
+                        <button id="btnResultOpenDetails" style="flex:1; background:#0F172A; color:#FFF; border:none; padding:12px; border-radius:10px; font-weight:700; font-size:13px; cursor:pointer;">
+                            Ver Ficha Completa
+                        </button>
+                        <a href="tel:08007226001" style="flex:1; background:#DC2626; color:#FFF; border:none; padding:12px; border-radius:10px; font-weight:700; font-size:13px; text-align:center; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:6px;">
+                            📞 Ligar CIATox
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ========================================================
+                 TAB 2: CATÁLOGO DE ESPÉCIES
+                 ======================================================== -->
+            <section id="paneCatalog" class="tab-pane">
+                <div class="categories-filter-bar" id="catalogCategoryTabs">
+                    <button class="category-tab-btn active" data-cat="all">Todos</button>
+                    <button class="category-tab-btn" data-cat="barbeiros">🪲 Barbeiros</button>
+                    <button class="category-tab-btn" data-cat="cobras">🐍 Cobras</button>
+                    <button class="category-tab-btn" data-cat="escorpioes">🦂 Escorpiões</button>
+                    <button class="category-tab-btn" data-cat="aranhas">🕷️ Aranhas</button>
+                </div>
+
+                <div class="catalog-grid" id="catalogGrid">
+                    <!-- Cards gerados via JS -->
+                </div>
+            </section>
+
+            <!-- ========================================================
+                 TAB 3: COMPARADOR DE RISCO (DUELOS VISUAIS)
+                 ======================================================== -->
+            <section id="paneCompare" class="tab-pane">
+                <div style="margin-bottom:14px; text-align:center;">
+                    <h2 style="font-size:16px; font-weight:800; color:var(--text-main);">Diferenças Vitais: Perigoso vs Inofensivo</h2>
+                    <p style="font-size:12px; color:var(--text-muted);">Aprenda a reconhecer em segundos as marcas diagnósticas que salvam vidas.</p>
+                </div>
+
+                <!-- Duelo 1: Barbeiro vs Percevejo Fitófago -->
+                <div class="comparison-box">
+                    <div class="comparison-header">
+                        <span style="font-size:12px; font-weight:800; text-transform:uppercase; color:#B91C1C;">🪲 Teste do Bico (Rostro)</span>
+                        <h3 style="font-size:14px; font-weight:700;">Barbeiro vs Percevejo de Planta</h3>
+                    </div>
+                    <div class="comparison-grid">
+                        <div class="compare-card danger">
+                            <img src="assets/images/triatoma_infestans.svg" alt="Barbeiro">
+                            <strong style="color:#B91C1C; font-size:12px;">BARBEIRO</strong>
+                            <p style="font-size:10px; color:#4B5563; margin-top:4px;">Bico <strong>reto e curto</strong> de 3 segmentos que dobra sob o tórax e não passa do 1º par de patas. Transmite Chagas!</p>
+                        </div>
+                        <div class="compare-card safe">
+                            <img src="assets/images/percevejo_fitofago.svg" alt="Percevejo">
+                            <strong style="color:#15803D; font-size:12px;">PERCEVEJO</strong>
+                            <p style="font-size:10px; color:#4B5563; margin-top:4px;">Bico <strong>muito longo</strong> que vai até o meio da barriga (fitófago) ou curvo. NÃO transmite Chagas!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duelo 2: Coral Verdadeira vs Falsa-Coral -->
+                <div class="comparison-box">
+                    <div class="comparison-header">
+                        <span style="font-size:12px; font-weight:800; text-transform:uppercase; color:#047857;">🐍 Teste dos Anéis Ventrais</span>
+                        <h3 style="font-size:14px; font-weight:700;">Coral-Verdadeira vs Falsa-Coral</h3>
+                    </div>
+                    <div class="comparison-grid">
+                        <div class="compare-card danger">
+                            <img src="assets/images/micrurus_corallinus.svg" alt="Coral Verdadeira">
+                            <strong style="color:#B91C1C; font-size:12px;">VERDADEIRA</strong>
+                            <p style="font-size:10px; color:#4B5563; margin-top:4px;">Anéis dão a <strong>volta completa</strong> pelo ventre. Olhos minúsculos, sem fosseta. Parada respiratória!</p>
+                        </div>
+                        <div class="compare-card safe">
+                            <img src="assets/images/falsa_coral.svg" alt="Falsa-Coral">
+                            <strong style="color:#15803D; font-size:12px;">FALSA-CORAL</strong>
+                            <p style="font-size:10px; color:#4B5563; margin-top:4px;">Anéis <strong>não fecham</strong> na barriga (ventre claro ou manchado). Olhos proporcionais normais.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duelo 3: Armadeira vs Aranha-de-jardim -->
+                <div class="comparison-box">
+                    <div class="comparison-header">
+                        <span style="font-size:12px; font-weight:800; text-transform:uppercase; color:#6D28D9;">🕷️ Teste da Postura de Ataque</span>
+                        <h3 style="font-size:14px; font-weight:700;">Armadeira vs Aranha-de-Jardim</h3>
+                    </div>
+                    <div class="comparison-grid">
+                        <div class="compare-card danger">
+                            <img src="assets/images/phoneutria_nigriventer.svg" alt="Armadeira">
+                            <strong style="color:#B91C1C; font-size:12px;">ARMADEIRA</strong>
+                            <p style="font-size:10px; color:#4B5563; margin-top:4px;">Fica em pé em 90° e ataca; quelíceras com pelos vermelhos; 8 olhos em filas 2-4-2. Dor extrema!</p>
+                        </div>
+                        <div class="compare-card safe">
+                            <img src="assets/images/lycosa_erythrognatha.svg" alt="Aranha de jardim">
+                            <strong style="color:#15803D; font-size:12px;">DE JARDIM</strong>
+                            <p style="font-size:10px; color:#4B5563; margin-top:4px;">Desenho de <strong>seta</strong> no dorso do abdômen. Foge rapidamente ao invés de armar bote.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duelo 4: Escorpião-amarelo vs Escorpião-marrom -->
+                <div class="comparison-box">
+                    <div class="comparison-header">
+                        <span style="font-size:12px; font-weight:800; text-transform:uppercase; color:#D97706;">🦂 Teste da Serrilha na Cauda</span>
+                        <h3 style="font-size:14px; font-weight:700;">Escorpião-Amarelo vs Marrom</h3>
+                    </div>
+                    <div class="comparison-grid">
+                        <div class="compare-card danger">
+                            <img src="assets/images/tityus_serrulatus.svg" alt="Amarelo">
+                            <strong style="color:#B91C1C; font-size:12px;">AMARELO</strong>
+                            <p style="font-size:10px; color:#4B5563; margin-top:4px;">Pernas e cauda amarelas limpas; <strong>crista serrilhada</strong> no 4º segmento caudal. Altíssimo risco pediátrico!</p>
+                        </div>
+                        <div class="compare-card safe" style="border-color:#F59E0B; background:#FFFBEB;">
+                            <img src="assets/images/tityus_bahiensis.svg" alt="Marrom">
+                            <strong style="color:#B45309; font-size:12px;">MARROM</strong>
+                            <p style="font-size:10px; color:#4B5563; margin-top:4px;">Pernas com <strong>manchas escuras</strong>; cauda lisa SEM serrilha dorsal. Também peçonhento.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================================
+                 TAB 4: GUIA DE SOROS E PRIMEIROS SOCORROS
+                 ======================================================== -->
+            <section id="paneSerums" class="tab-pane">
+                <div style="margin-bottom:16px;">
+                    <h2 style="font-size:17px; font-weight:800; color:#0F172A;">Guia Oficial de Soros e Primeiros Socorros</h2>
+                    <p style="font-size:12px; color:#64748B;">Recomendações técnicas do Ministério da Saúde e Instituto Butantan.</p>
+                </div>
+
+                <!-- Card de Chamada Rápida CIATox -->
+                <div style="background:linear-gradient(135deg, #0F172A, #0284C7); border-radius:14px; padding:16px; color:#FFF; margin-bottom:18px;">
+                    <div style="font-size:11px; text-transform:uppercase; letter-spacing:1px; color:#BAE6FD; font-weight:700;">Atendimento 24h Gratuito</div>
+                    <div style="font-size:20px; font-weight:800; margin:4px 0;">Disque-Intoxicação Nacional</div>
+                    <div style="font-size:24px; font-weight:800; color:#38BDF8; margin-bottom:8px;">0800 722 6001</div>
+                    <p style="font-size:11px; opacity:0.9;">Médicos toxicologistas de plantão para orientar o socorro e indicar o hospital mais próximo com soro.</p>
+                </div>
+
+                <!-- Lista de Soros -->
+                <div style="font-size:13px; font-weight:700; color:#64748B; text-transform:uppercase; margin-bottom:10px;">Soros Antipeçonhentos Disponíveis no SUS</div>
+                <div id="serumsList">
+                    <!-- Preenchido via JS -->
+                </div>
+
+                <!-- Regras de Ouro -->
+                <div style="background:#FEF2F2; border-radius:14px; padding:16px; border:1px solid #FECACA; margin-top:18px;">
+                    <h3 style="font-size:14px; font-weight:800; color:#991B1B; margin-bottom:8px;">O Que NUNCA Fazer em Caso de Picada:</h3>
+                    <ul style="padding-left:18px; font-size:12px; color:#7F1D1D; line-height:1.6;">
+                        <li><strong>NUNCA faça torniquete ou garrote:</strong> Prender a circulação concentra o veneno e pode levar à perda do membro por necrose.</li>
+                        <li><strong>NUNCA corte ou fure o local:</strong> Não elimina o veneno e abre portas para hemorragias e infecções bacterianas graves.</li>
+                        <li><strong>NUNCA tente sugar o veneno com a boca:</strong> A mucosa oral absorve toxinas e bactérias da boca infectam a ferida.</li>
+                        <li><strong>NUNCA coloque borra de café, querosene ou folhas.</strong></li>
+                        <li><strong>Lave apenas com água e sabão e corra para o hospital!</strong></li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- BARRA INFERIOR DE ABAS (BOTTOM NAV) -->
+        <nav class="bottom-nav">
+            <button class="nav-tab-btn active" data-tab="scanner" id="navScanner">
+                <span class="nav-icon">📷</span>
+                <span>Scanner</span>
+            </button>
+            <button class="nav-tab-btn" data-tab="catalog" id="navCatalog">
+                <span class="nav-icon">📚</span>
+                <span>Catálogo</span>
+            </button>
+            <button class="nav-tab-btn" data-tab="compare" id="navCompare">
+                <span class="nav-icon">⚖️</span>
+                <span>Comparar</span>
+            </button>
+            <button class="nav-tab-btn" data-tab="serums" id="navSerums">
+                <span class="nav-icon">💉</span>
+                <span>Soros</span>
+            </button>
+        </nav>
+
+        <!-- MODAL: FICHA COMPLETA DO ESPÉCIME -->
+        <div id="modalSpecimenDetail" class="modal-overlay">
+            <div class="modal-sheet">
+                <div class="modal-header">
+                    <h3 id="modalDetailTitle" style="font-size:16px; font-weight:800; color:#0F172A;">Detalhes do Espécime</h3>
+                    <button class="modal-close-btn">&times;</button>
+                </div>
+                <div id="modalDetailBody">
+                    <!-- Preenchido via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL: SOS EMERGÊNCIA RÁPIDA -->
+        <div id="modalSos" class="modal-overlay">
+            <div class="modal-sheet">
+                <div class="modal-header">
+                    <h3 style="font-size:17px; font-weight:800; color:#DC2626;">🚨 Protocolo de Emergência Imediata</h3>
+                    <button class="modal-close-btn">&times;</button>
+                </div>
+                <div style="font-size:13px; line-height:1.6; color:#334155;">
+                    <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+                        <a href="tel:192" style="background:#DC2626; color:#FFF; padding:14px; border-radius:12px; font-weight:800; text-align:center; text-decoration:none; font-size:16px;">
+                            🚑 Chamar SAMU (192)
+                        </a>
+                        <a href="tel:08007226001" style="background:#0284C7; color:#FFF; padding:14px; border-radius:12px; font-weight:800; text-align:center; text-decoration:none; font-size:16px;">
+                            📞 Ligar CIATox (0800 722 6001)
+                        </a>
+                        <a href="tel:193" style="background:#0F172A; color:#FFF; padding:14px; border-radius:12px; font-weight:800; text-align:center; text-decoration:none; font-size:16px;">
+                            🚒 Corpo de Bombeiros (193)
+                        </a>
+                    </div>
+                    <p style="font-size:12px; color:#64748B;">
+                        1. Mantenha a vítima calma e em repouso.<br>
+                        2. Lave a ferida apenas com água e sabão.<br>
+                        3. Se seguro, tire uma foto do animal para apresentar à equipe médica para a escolha imediata do soro correto.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/database.js"></script>
+    <script src="js/scanner.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

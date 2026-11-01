@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Logo Identificando Bichinhos: Escudo circular com lupa e símbolos dos 4 animais -->
+  <defs>
+    <linearGradient id="logoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0284C7" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <circle cx="100" cy="100" r="90" fill="url(#logoBg)" stroke="#38BDF8" stroke-width="4" filter="url(#logoGlow)"/>
+
+  <!-- Retículo de mira biométrica nos 4 cantos -->
+  <path d="M45 65 L45 45 L65 45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M155 65 L155 45 L135 45" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M45 135 L45 155 L65 155" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M155 135 L155 155 L135 155" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <!-- 4 Ícones estilizados representando Barbeiro, Cobra, Escorpião e Aranha -->
+  <!-- Cobra (Verde) -->
+  <path d="M90 60 C80 50, 60 55, 65 75 C70 90, 85 85, 90 98" fill="none" stroke="#10B981" stroke-width="5" stroke-linecap="round"/>
+  <!-- Escorpião (Amarelo) -->
+  <path d="M110 60 C125 50, 140 60, 135 75 C130 90, 115 85, 110 98" fill="none" stroke="#F59E0B" stroke-width="5" stroke-linecap="round"/>
+  <!-- Barbeiro (Vermelho) -->
+  <circle cx="78" cy="120" r="14" fill="#EF4444" opacity="0.9"/>
+  <!-- Aranha (Roxo) -->
+  <circle cx="122" cy="120" r="14" fill="#A855F7" opacity="0.9"/>
+
+  <!-- Lupa central de identificação -->
+  <circle cx="100" cy="98" r="32" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+  <line x1="124" y1="122" x2="148" y2="146" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Reflexo da lente -->
+  <path d="M80 82 A22 22 0 0 1 110 75" fill="none" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+</svg>

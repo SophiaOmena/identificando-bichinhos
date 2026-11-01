@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Phoneutria nigriventer - Aranha-armadeira (Postura erguida de ataque, quelíceras com pelos vermelhos) -->
+  <defs>
+    <radialGradient id="phoneutriaBody" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#543D2B"/>
+      <stop offset="70%" stop-color="#362518"/>
+      <stop offset="100%" stop-color="#1A1008"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Patas dianteiras ERGUIDAS EM POSTURA DE ATAQUE (90 graus) - Marca inconfundível de Phoneutria -->
+  <g stroke="#362518" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Perna I esquerda erguida -->
+    <path d="M80 80 L55 50 L40 18 L32 5"/>
+    <!-- Perna I direita erguida -->
+    <path d="M120 80 L145 50 L160 18 L168 5"/>
+    <!-- Perna II esquerda erguida -->
+    <path d="M75 90 L40 68 L22 38 L14 25"/>
+    <!-- Perna II direita erguida -->
+    <path d="M125 90 L160 68 L178 38 L186 25"/>
+    <!-- Perna III esquerda apoiando o peso atrás -->
+    <path d="M75 110 L35 120 L15 145 L8 170"/>
+    <!-- Perna III direita apoiando -->
+    <path d="M125 110 L165 120 L185 145 L192 170"/>
+    <!-- Perna IV esquerda -->
+    <path d="M80 125 L45 150 L30 178 L20 195"/>
+    <!-- Perna IV direita -->
+    <path d="M120 125 L155 150 L170 178 L180 195"/>
+  </g>
+
+  <!-- Cefalotórax robusto -->
+  <ellipse cx="100" cy="98" rx="20" ry="24" fill="url(#phoneutriaBody)" stroke="#1A1008" stroke-width="2"/>
+
+  <!-- Abdômen oval alongado com padrão de pontos claros -->
+  <ellipse cx="100" cy="145" rx="22" ry="32" fill="url(#phoneutriaBody)" stroke="#1A1008" stroke-width="2"/>
+  
+  <!-- Padrão dorsal de pares de pontos amarelados de Phoneutria -->
+  <g fill="#FBBF24" opacity="0.8">
+    <circle cx="94" cy="128" r="2"/>
+    <circle cx="106" cy="128" r="2"/>
+    <circle cx="92" cy="140" r="2.2"/>
+    <circle cx="108" cy="140" r="2.2"/>
+    <circle cx="94" cy="154" r="2"/>
+    <circle cx="106" cy="154" r="2"/>
+    <circle cx="96" cy="166" r="1.8"/>
+    <circle cx="104" cy="166" r="1.8"/>
+  </g>
+
+  <!-- QUELÍCERAS / FERRÕES COM CERDAS VERMELHO-VIVAS (Característica marcante de Phoneutria) -->
+  <g fill="#DC2626" stroke="#991B1B" stroke-width="1.5">
+    <path d="M91 76 L87 60 L97 60 L97 76 Z"/>
+    <path d="M109 76 L113 60 L103 60 L103 76 Z"/>
+    <!-- Pontas pretas dos ferrões inoculadores -->
+    <path d="M88 60 L92 50 L94 60 Z" fill="#000000"/>
+    <path d="M112 60 L108 50 L106 60 Z" fill="#000000"/>
+  </g>
+
+  <!-- Olhos em 3 filas (2 - 4 - 2) -->
+  <g fill="#FFFFFF" stroke="#000000" stroke-width="0.8">
+    <!-- Fila anterior (2 olhos) -->
+    <circle cx="95" cy="74" r="1.5"/>
+    <circle cx="105" cy="74" r="1.5"/>
+    <!-- Fila média (4 olhos em trapézio) -->
+    <circle cx="92" cy="78" r="2"/>
+    <circle cx="98" cy="79" r="2.2"/>
+    <circle cx="102" cy="79" r="2.2"/>
+    <circle cx="108" cy="78" r="2"/>
+    <!-- Fila posterior (2 olhos) -->
+    <circle cx="88" cy="84" r="1.8"/>
+    <circle cx="112" cy="84" r="1.8"/>
+  </g>
+</svg>

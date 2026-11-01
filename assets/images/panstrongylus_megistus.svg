@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Panstrongylus megistus - Barbeiro da Mata (Preto e Vermelho intenso) -->
+  <defs>
+    <radialGradient id="panBody" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#261A13"/>
+      <stop offset="80%" stop-color="#140D08"/>
+      <stop offset="100%" stop-color="#050302"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Pernas pretas -->
+  <g stroke="#120A05" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M85 70 L40 40 L20 50"/>
+    <path d="M115 70 L160 40 L180 50"/>
+    <path d="M82 95 L30 88 L10 108"/>
+    <path d="M118 95 L170 88 L190 108"/>
+    <path d="M85 125 L38 150 L22 180"/>
+    <path d="M115 125 L162 150 L178 180"/>
+  </g>
+
+  <!-- Antenas -->
+  <path d="M92 38 L68 18 L55 10" stroke="#120A05" stroke-width="2" fill="none"/>
+  <path d="M108 38 L132 18 L145 10" stroke="#120A05" stroke-width="2" fill="none"/>
+
+  <!-- Conexivo com manchas vermelho-vivas e pretas -->
+  <path d="M100 70 C58 70, 50 105, 50 145 C50 180, 75 192, 100 192 C125 192, 150 180, 150 145 C150 105, 142 70, 100 70 Z"
+        fill="#DC2626" stroke="#000000" stroke-width="3"/>
+
+  <!-- Faixas pretas do conexivo -->
+  <g fill="#0A0604">
+    <path d="M52 90 L64 92 L62 105 L51 103 Z"/>
+    <path d="M148 90 L136 92 L138 105 L149 103 Z"/>
+    <path d="M50 118 L62 119 L61 132 L50 130 Z"/>
+    <path d="M150 118 L138 119 L139 132 L150 130 Z"/>
+    <path d="M53 145 L65 144 L67 157 L56 158 Z"/>
+    <path d="M147 145 L135 144 L133 157 L144 158 Z"/>
+    <path d="M66 170 L78 166 L82 177 L71 181 Z"/>
+    <path d="M134 170 L122 166 L118 177 L129 181 Z"/>
+  </g>
+
+  <!-- Asas hemélitros pretas -->
+  <path d="M100 70 C70 70, 66 100, 66 140 C66 176, 86 188, 100 190 C114 188, 134 176, 134 140 C134 100, 130 70, 100 70 Z"
+        fill="url(#panBody)"/>
+
+  <!-- Pronoto preto com manchas vermelhas nos cantos -->
+  <polygon points="80,48 120,48 132,72 68,72" fill="#0D0805" stroke="#000000" stroke-width="2"/>
+  <circle cx="76" cy="65" r="4.5" fill="#EF4444"/>
+  <circle cx="124" cy="65" r="4.5" fill="#EF4444"/>
+
+  <!-- Cabeça curta e robusta de Panstrongylus -->
+  <path d="M92 48 L92 30 L100 24 L108 30 L108 48 Z" fill="#0A0604"/>
+  <circle cx="90" cy="38" r="3.5" fill="#EF4444"/>
+  <circle cx="110" cy="38" r="3.5" fill="#EF4444"/>
+</svg>

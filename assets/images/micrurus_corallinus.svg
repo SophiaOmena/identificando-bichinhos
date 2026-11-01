@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <!-- Micrurus corallinus - Coral Verdadeira (Anéis completos no corpo e ventre, cabeça arredondada, sem fosseta loreal) -->
+  <defs>
+    <!-- Filtro de sombra suave -->
+    <filter id="coralShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Corpo em S suave com padrão de anéis tricromáticos completos -->
+  <path d="M50 40 C110 35, 160 65, 145 105 C130 145, 55 125, 65 165 C70 185, 110 185, 160 170"
+        fill="none" stroke="#DC2626" stroke-width="22" stroke-linecap="round" filter="url(#coralShadow)"/>
+
+  <!-- Anéis pretos e brancos que completam a volta por todo o corpo (marca de Coral Verdadeira) -->
+  <g stroke-linecap="butt">
+    <!-- Padrão: Vermelho - Preto - Branco - Preto - Vermelho -->
+    <!-- Seção 1 -->
+    <path d="M72 38 L76 39" stroke="#000000" stroke-width="22"/>
+    <path d="M80 39 L84 40" stroke="#FFFFFF" stroke-width="22"/>
+    <path d="M88 41 L92 43" stroke="#000000" stroke-width="22"/>
+
+    <!-- Seção 2 -->
+    <path d="M118 48 L122 51" stroke="#000000" stroke-width="22"/>
+    <path d="M126 55 L130 58" stroke="#FFFFFF" stroke-width="22"/>
+    <path d="M134 62 L138 66" stroke="#000000" stroke-width="22"/>
+
+    <!-- Seção 3 -->
+    <path d="M148 95 L147 100" stroke="#000000" stroke-width="22"/>
+    <path d="M145 105 L143 110" stroke="#FFFFFF" stroke-width="22"/>
+    <path d="M140 115 L138 120" stroke="#000000" stroke-width="22"/>
+
+    <!-- Seção 4 -->
+    <path d="M102 129 L98 128" stroke="#000000" stroke-width="22"/>
+    <path d="M92 128 L88 129" stroke="#FFFFFF" stroke-width="22"/>
+    <path d="M82 131 L78 133" stroke="#000000" stroke-width="22"/>
+
+    <!-- Seção 5 -->
+    <path d="M64 155 L65 160" stroke="#000000" stroke-width="22"/>
+    <path d="M67 165 L70 170" stroke="#FFFFFF" stroke-width="22"/>
+    <path d="M74 174 L78 177" stroke="#000000" stroke-width="22"/>
+
+    <!-- Seção 6 -->
+    <path d="M100 184 L105 183" stroke="#000000" stroke-width="22"/>
+    <path d="M112 181 L118 179" stroke="#FFFFFF" stroke-width="22"/>
+    <path d="M125 177 L130 175" stroke="#000000" stroke-width="22"/>
+  </g>
+
+  <!-- Cabeça arredondada contínua com o corpo (SEM separação de pescoço, sem fosseta loreal) -->
+  <g transform="translate(36, 32)">
+    <path d="M18 10 C18 3, 0 3, 0 10 C0 17, 18 17, 18 10 Z" fill="#000000"/>
+    <!-- Focinho preto característico de Micrurus -->
+    <path d="M-4 10 C-4 5, 4 5, 4 10 C4 15, -4 15, -4 10 Z" fill="#000000"/>
+    <!-- Olhos muito pequenos com pupila redonda -->
+    <circle cx="2" cy="7" r="1.6" fill="#FFFFFF"/>
+    <circle cx="2" cy="7" r="0.9" fill="#000000"/>
+  </g>
+</svg>
